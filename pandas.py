@@ -101,11 +101,23 @@ for i in range(len(time_)):
 print(gp)
 gpp = []
 a=0
-b=input("요일")
-if b == "월":
-    pass
-for i in range(len(time_[a])):
-    gpp.append(time_[0][i] + '\n')
+b=input("요일 > ")
+# if b == "월":
+#     pass
+# a가 인덱스 번호
+print(gp.loc[:,[b]])
+
+now_gp = []
+now_index = ['아', '점', '저']
+
+for x in now_index:
+    if gp.at[x,b] != None:
+        now_gp.append(gp.at[x,b])
+    else:
+        pass
+
+for a in now_gp:
+    for i in range(len(time_[a])):
+        gpp.append(time_[a][i] + '\n')
+print(now_gp)
 print(*gpp)
-print(gp)
-print(gp.loc[:,["화"]])
